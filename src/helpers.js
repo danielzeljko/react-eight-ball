@@ -2,7 +2,7 @@
 
 function getRandomChoice(answers) {
   const randomChoice = Math.floor(Math.random() * answers.length);
-  return answers[randomChoice]
+  return answers[randomChoice];
 }
 
 export default getRandomChoice;

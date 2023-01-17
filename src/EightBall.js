@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DEFAULT_ANSWERS from "./data/answers";
-import "./EightBall.css"
+import "./EightBall.css";
 import getRandomChoice from "./helpers";
 
 /** Renders our Magic EightBall.
@@ -17,31 +17,30 @@ import getRandomChoice from "./helpers";
  * App -> EightBall
  */
 
-function EightBall({answers=DEFAULT_ANSWERS}){
-
-  const [EightBallInfo, setEightBallInfo] = useState({
+function EightBall({ answers = DEFAULT_ANSWERS }) {
+  const [eightBallInfo, setEightBallInfo] = useState({
     msg: "Think of a Question",
     color: "black"
-  })
+  });
 
   const styleOptions = {
-    backgroundColor: EightBallInfo.color
-  }
+    backgroundColor: eightBallInfo.color
+  };
 
-  function handleClick(evt){
+  function handleClick(evt) {
     const ans = getRandomChoice(answers);
 
     setEightBallInfo({
       msg: ans.msg,
       color: ans.color
-    })
+    });
   }
 
   return (
     <div className="EightBall" onClick={handleClick} style={styleOptions}>
-      <p>{EightBallInfo.msg}</p>
+      <p>{eightBallInfo.msg}</p>
     </div>
-  )
+  );
 }
 
 export default EightBall;
